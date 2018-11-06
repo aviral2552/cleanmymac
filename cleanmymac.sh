@@ -1,14 +1,17 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 echo "Initiating the cleaning engines..."
 echo "=================================="
 
-CLEANERS_DIR=$(cat ~/.cleanmymac/path)/cleaners
+CLEANERS=$(cat ~/.cleanmymac/path)/cleaners
 
-for script in $(ls $CLEANERS_DIR); do
-  if [ -x "$CLEANERS_DIR/$script" ]; then
-    ( $CLEANERS_DIR/$script $@ )
-  fi
-done
+    for file in $(ls $CLEANERS); do
+       if [ -x $file ]; then
+            echo "Running cleaner: " $file && $CLEANERS/$file $@
+       else
+           echo "Error in running cleaner: " $file
+       fi
+    done
+
 
 echo "All done! Your mac is now squeaky clean!"
