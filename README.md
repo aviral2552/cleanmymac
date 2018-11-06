@@ -10,7 +10,7 @@ No real requirements. Use the cleaners that you need to, located in the cleaners
 
 ## Installation
 
-Open Terminal and type
+Open Terminal, go to the folder where you want to install cleanmymac and type
 
 `$ git clone git@github.com:thelamehacker/cleanmymac.git && cd cleanmymac && ./install.sh`
 
