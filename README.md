@@ -1,7 +1,8 @@
 # Clean my macOS
-A placeholder for next-generation intelligent macOS cleaner program
 
-The end goal is to create a scalable and extensible program that works through custom plugin system. And is able to carry out most conservative cleaning and optimizations for modern macOS machines with a single terminal command. The project will be distributed through Homebrew.
+Clean My Mac is built for modern macOS systems. It perform maintainance for mostly commonly used components in the core OS and third party tools with a single terminal command.
+
+The system uses a simple plugin system with all "cleaners" located in `~/.cleanmymac/cleaners` directory. Functionality can be added (or removed) by adding (or removing) files in the `~/.cleanmymac/cleaners` directory.
 
 ## Pre-requisites
 
