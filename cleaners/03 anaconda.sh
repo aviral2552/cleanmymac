@@ -6,4 +6,11 @@ if hash conda 2>/dev/null; then
   conda update --all
   echo ""
 
+# Invoked with "cleanmymac cleanup" command
+  if [[ $1 == "cleanup" ]]; then
+    echo "Cleaning unused Ananconda packages..."
+    conda clean -a -y
+  fi
 fi
+
+
