@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+# Check if brew is installed and perform maintainance
 if hash brew 2>/dev/null; then
   echo "Performing Homebrew maintainance..."
   brew update
