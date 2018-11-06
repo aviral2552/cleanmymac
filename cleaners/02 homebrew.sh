@@ -15,7 +15,7 @@ if hash brew 2>/dev/null; then
 
   # Invoked with "cleanmymac cleanup" command
   if [[ $1 == "cleanup" ]]; then
-    echo "Cleaning the brewery"
+    echo "Cleaning the brewery..."
     brew cleanup -s
   fi
 fi
