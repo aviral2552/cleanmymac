@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-echo "Initiating the engines..."
+echo "Initiating the cleaning engines..."
 echo ""
 
 MAX_WIDTH=50
@@ -16,4 +16,4 @@ for script in $(ls $CLEANERS_DIR); do
   fi
 done
 
-echo "All done! Your mac is not squeaky clean!"
+echo "All done! Your mac is now squeaky clean!"
