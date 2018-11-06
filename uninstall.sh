@@ -3,4 +3,4 @@
 rm -rf $(which cleanmymac)
 rm -rf ~/.cleanmymac
 
-echo "Clean My Mac has been uninstalled. :("
+echo "Clean My macOS has been uninstalled. :("
