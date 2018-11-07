@@ -29,11 +29,9 @@ echo "Making the scripts executable..."
 xattr -rc ~/.cleanmymac/
 chmod +x ~/.cleanmymac/cleanmymac.sh
 
-# Going to User's home folder to supress irrelevant shell-init warnings
+# Removing leftover installation files
 rm -rf ${CMM_PATH}
 
 echo ""
 echo "Clean My macOS has been installed and can be run by typing cleanmymac"
 echo ""
-
-exit 0
