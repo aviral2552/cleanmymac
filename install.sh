@@ -24,12 +24,12 @@ mkdir -p "setup"
 mv ~/.cleanmymac/install.sh ~/.cleanmymac/setup/install.sh
 mv ~/.cleanmymac/uninstall.sh ~/.cleanmymac/setup/uninstall.sh
 
-# Making the scripts executable
+# Making the scripts executable and removing extended attributes
 echo "Making the scripts executable..."
-MAININSTALL=$(cat ~/.cleanmymac/path)
-chmod +x $MAININSTALL -R
+xattr -rc ~/.cleanmymac/
+chmod +x ~/.cleanmymac/cleanmymac.sh
 
 echo ""
-echo "Clean My macOS has been installed."
-echo "Run Clean My macOS command by typing cleanmymac in your terminal window!"
+echo "Clean My macOS has been installed. You can now delete the downloaded files from ${CMM_PATH} safely."
+echo "Clean My macOS can be run by typing cleanmymac in terminal! Have fun!"
 echo ""
