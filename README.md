@@ -24,6 +24,14 @@ Update all packages, run all maintainance scripts and perform cleanup with suppo
 
 `$ cleanmymac cleanup`
 
+## Uninstallation
+
+Note: Uninstallation is not required for updates. Clean My macOS has a self-updated script that executes on every run.
+
+To uninstall, run the following command in terminal
+
+`~/.cleanmymac/setup/uninstall.sh`
+
 ## How do cleaners work
 
 Cleaners are located under `~/.cleanmymac/cleaners` directory. You may remove the cleaners that are not applicable on your system.
