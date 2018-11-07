@@ -7,14 +7,17 @@ if hash conda 2>/dev/null; then
   echo ""
 
 
-### Keeping cleanup disabled as the command above downloads and updates the all packages
-### and cleanup will remove the unused packages, thus uselessly downloading packages.
+### Keeping cleanup disabled.
+### con update --all updates and installs packages
+### and conda clean will remove any unused packages
+### thus making it redundant for most users
 
 # Invoked with "cleanmymac cleanup" command
 #  if [[ $1 == "cleanup" ]]; then
 #    echo "Cleaning unused Ananconda packages..."
 #    conda clean -a -y
 #  fi
+
 fi
 
 
