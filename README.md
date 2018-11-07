@@ -26,7 +26,7 @@ Update all packages, run all maintainance scripts and perform cleanup with suppo
 
 ## Uninstallation
 
-Note: Uninstallation is not required for updates. Clean My macOS has a self-updated script that executes on every run.
+Note: Uninstallation is not required for updates. Clean My macOS has a self-updater script that executes on every run.
 
 To uninstall, run the following command in terminal
 
