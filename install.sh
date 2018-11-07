@@ -30,6 +30,6 @@ xattr -rc ~/.cleanmymac/
 chmod +x ~/.cleanmymac/cleanmymac.sh
 
 echo ""
-echo "Clean My macOS has been installed. You can now delete the downloaded files from ${CMM_PATH} safely."
-echo "Clean My macOS can be run by typing cleanmymac in terminal! Have fun!"
+echo "Clean My macOS has been installed and can be run by typing cleanmymac"
+echo "It is also safe to delete installation files from ${CMM_PATH} directory.""
 echo ""
