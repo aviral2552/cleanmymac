@@ -15,6 +15,6 @@ if hash conda 2>/dev/null; then
 #    echo "Cleaning unused Ananconda packages..."
 #    conda clean -a -y
 #  fi
-#fi
+fi
 
 
