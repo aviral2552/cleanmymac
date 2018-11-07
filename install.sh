@@ -34,7 +34,6 @@ rm -rf ${CMM_PATH}
 
 echo ""
 echo "Clean My macOS has been installed and can be run by typing cleanmymac"
-echo "It is also safe to delete installation files from ${CMM_PATH} directory."
 echo ""
 
 exit 0
