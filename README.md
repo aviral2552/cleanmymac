@@ -6,13 +6,13 @@ The system uses a simple plugin system with all "cleaners" located in `~/.cleanm
 
 ## Pre-requisites
 
-You must have `git` and `brew` installed. Apart from that, there are no real requirements. Use the cleaners that you need to, located in the cleaners directory.
+You must have `git` and `brew` installed. Apart from that, there are no other requirements. Use the cleaners that you need to, located in the cleaners directory.
 
 To install Homebrew open terminal and type
 
 `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
 
-After installing homebres, you can install `git` by typing the following in the terminal
+After installing Homebrew, you can install `git` by typing the following in the terminal
 
 `brew install git`
 
