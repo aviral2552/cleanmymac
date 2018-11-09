@@ -1,8 +1,8 @@
 # Clean my macOS
 
-Clean My macOS is built for modern macOS systems. It perform maintainance for mostly commonly used components in the core OS and third party tools with a single terminal command.
+Clean My macOS is built for modern macOS systems. It performs maintainance for mostly commonly used components in the core OS and third party tools with a single terminal command.
 
-The system uses a simple plugin system with all "cleaners" located in `~/.cleanmymac/cleaners` directory. Functionality can be added (or removed) by adding (or removing) files in the `~/.cleanmymac/cleaners` directory.
+Clean My macOS uses a simple plugin system with all "cleaners" located in `~/.cleanmymac/cleaners` directory. Functionality can be added (or removed) by adding (or removing) files in the directory.
 
 ## Pre-requisites
 
