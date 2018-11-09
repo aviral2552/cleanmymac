@@ -6,13 +6,23 @@ The system uses a simple plugin system with all "cleaners" located in `~/.cleanm
 
 ## Pre-requisites
 
-No real requirements. Use the cleaners that you need to, located in the cleaners directory.
+You must have `git` and `brew` installed. Apart from that, there are no real requirements. Use the cleaners that you need to, located in the cleaners directory.
+
+To install Homebrew open terminal and type
+
+`/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+
+After installing homebres, you can install `git` by typing the following in the terminal
+
+`brew install git`
 
 ## Installation
 
-Open Terminal, go to the folder where you want to install cleanmymac and type
+Open Terminal and type
 
 `$ git clone git@github.com:thelamehacker/cleanmymac.git && cd cleanmymac && ./install.sh && cd`
+
+Note: Clean My macOS is always installed in `~/.cleanmymac` directory
 
 ## Supported commands
 
@@ -26,11 +36,11 @@ Update all packages, run all maintainance scripts and perform cleanup with suppo
 
 ## Uninstallation
 
-Note: Uninstallation is not required for updates. Clean My macOS has a self-updater script that executes on every run.
-
 To uninstall, run the following command in terminal
 
 `~/.cleanmymac/setup/uninstall.sh`
+
+Note: Uninstallation is not required for updates. Clean My macOS has a self-updater script that executes on every run.
 
 ## How do cleaners work
 
