@@ -10,11 +10,11 @@ You must have `git` and `brew` installed. Apart from that, there are no other re
 
 To install Homebrew open terminal and type
 
-`/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+`$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
 
 After installing Homebrew, you can install `git` by typing the following in the terminal
 
-`brew install git`
+`$ brew install git`
 
 ## Installation
 
@@ -38,7 +38,7 @@ Update all packages, run all maintainance scripts and perform cleanup with suppo
 
 To uninstall, run the following command in terminal
 
-`~/.cleanmymac/setup/uninstall.sh`
+`$ ~/.cleanmymac/setup/uninstall.sh`
 
 Note: Uninstallation is not required for updates. Clean My macOS has a self-updater script that executes on every run.
 
