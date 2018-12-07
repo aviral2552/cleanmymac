@@ -6,7 +6,7 @@ Clean My macOS uses a simple plugin system with all "cleaners" located in `~/.cl
 
 ## Pre-requisites
 
-You must have `git` and `brew` installed. Apart from that, there are no other requirements. Use the cleaners that you need to, located in the cleaners directory.
+You must have `brew` and `git` installed. You can use the cleaners that you need to or remove the ones that you do not want to use. Cleaners are located in the `~/.cleanmymac/cleaners` directory.
 
 To install Homebrew open terminal and type
 
@@ -26,13 +26,17 @@ Note: Clean My macOS is always installed in `~/.cleanmymac` directory
 
 ## Supported commands
 
-Update all packages and run all maintainance cleaners
+Update all packages and run all maintainance cleaners on your system
 
 `$ cleanmymac`
 
-Update all packages, run all maintainance scripts and perform cleanup with supported cleaners
+Run self-update for Clean My macOS
 
-`$ cleanmymac cleanup`
+`$ cleanmymac update`
+
+Display Clean My macOS help page
+
+`$ cleanmymac help`
 
 ## Uninstallation
 
