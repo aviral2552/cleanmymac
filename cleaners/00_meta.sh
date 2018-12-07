@@ -1,11 +1,18 @@
 #!/bin/sh
 
 displayHelp() {
-    echo "Standard help page"
+    echo "Standard help page placeholder"
 }
 
 runUpdate() {
-    echo "Clean my macOS self update"
+    echo "Running system self-update"
+    echo "=========================="
+    echo ""
+
+    pushd "$(cat ~/.cleanmymac/path)" > /dev/null
+    git pull
+    popd > /dev/null
+    echo ""
 }
 
 invalidWarning() {
