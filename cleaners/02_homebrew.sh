@@ -2,6 +2,7 @@
 
 # Check if brew is installed and perform maintainance
 if hash brew 2>/dev/null; then
+
   echo "Performing Homebrew maintainance..."
   brew update
   brew upgrade
@@ -13,9 +14,8 @@ if hash brew 2>/dev/null; then
   brew missing
   echo ""
 
-  # Invoked with "cleanmymac cleanup" command
-  if [[ $1 == "cleanup" ]]; then
-    echo "Cleaning the brewery..."
-    brew cleanup -s
-  fi
+  echo "Cleaning the brewery..."
+  brew cleanup -s
+  echo ""
+
 fi
