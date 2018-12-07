@@ -44,7 +44,7 @@ To uninstall, run the following command in terminal
 
 `$ ~/.cleanmymac/setup/uninstall.sh`
 
-Note: Uninstallation is not required for updates. Clean My macOS has a self-updater script that executes on every run.
+Note: Uninstallation is not required for updates. You can run `$ cleanmymac update` to perform auto-update.
 
 ## How do cleaners work
 
