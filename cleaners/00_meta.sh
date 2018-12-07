@@ -2,6 +2,7 @@
 
 displayHelp() {
     echo "Standard help page placeholder"
+    echo "=============================="
     echo ""
 }
 
