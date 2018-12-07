@@ -10,8 +10,8 @@ if hash brew 2>/dev/null; then
   brew cask outdated | cut -f 1 | xargs brew cask reinstall
   echo ""
 
-  echo "Calling the doctor for the mandatory health checkup"
-  echo "==================================================="
+  echo "Calling the brewery doctor for the mandatory health checkup"
+  echo "==========================================================="
   brew doctor
   brew missing
   echo ""
