@@ -38,6 +38,17 @@ Display Clean My macOS help page
 
 `$ cleanmymac help`
 
+## Supported cleaners
+
+*   macOS core maintenance (upcoming)
+*   Homebrew
+*   Anaconda Navigator
+*   npm
+*   Yarn
+*   Composer
+*   Rustup
+*   Atom
+
 ## Uninstallation
 
 To uninstall, run the following command in terminal
