@@ -15,7 +15,7 @@ if hash npm 2>/dev/null; then
 
     echo "Updating npm packages"
     echo "====================="
-    npm update -g
+    npm --depth 9999 update -g --no-save
     echo ""
 
 fi
