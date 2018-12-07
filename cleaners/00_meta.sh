@@ -1,8 +1,28 @@
 #!/bin/sh
 
 displayHelp() {
-    echo "Standard help page placeholder"
-    echo "=============================="
+    clear
+    echo "NAME"
+    echo "    cleanmymac -- a simple command line cleaners for developers using macOS"
+    echo ""
+    echo "DESCRIPTION"
+    echo "    Clean My macOS is built for modern macOS systems. It performs maintainance for mostly commonly used"
+    echo "    components in the core OS and third party tools with a single terminal command."
+    echo ""
+    echo "    The following parameters are supported:"
+    echo ""
+    echo "    cleanmymac"
+    echo "        Runs all cleaners"
+    echo ""
+    echo "    cleanmymac update"
+    echo "        Performs self-update"
+    echo ""
+    echo "    cleanmymac help"
+    echo "        Displays this help"
+    echo ""
+    echo "PROJECT LINK"
+    echo "    https://github.com/thelamehacker/cleanmymac"
+    echo ""
     echo ""
 }
 
