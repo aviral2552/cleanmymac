@@ -8,19 +8,14 @@ if hash npm 2>/dev/null; then
     npm install npm@latest -g
     echo ""
 
-    echo "Finding outdated packages"
-    echo "========================="
+    echo "Finding outdated npm packages"
+    echo "============================="
     npm outdated -g --depth=0
     echo ""
 
     echo "Updating npm packages"
     echo "====================="
     npm update -g
-    echo ""
-
-    echo "Cleaning npm cache"
-    echo "=================="
-    npm cache clean
     echo ""
 
 fi

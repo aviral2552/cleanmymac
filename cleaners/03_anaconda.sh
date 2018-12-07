@@ -9,5 +9,3 @@ if hash conda 2>/dev/null; then
   echo ""
 
 fi
-
-
