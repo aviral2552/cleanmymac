@@ -40,7 +40,7 @@ Display Clean My macOS help page
 
 ## Supported cleaners
 
-*   macOS core maintenance (upcoming)
+*   macOS core maintenance
 *   Homebrew
 *   Anaconda Navigator
 *   npm
