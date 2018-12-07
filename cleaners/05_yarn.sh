@@ -3,13 +3,15 @@
 # Check if yarn is installed and perform updates
 if hash yarn 2>/dev/null; then
 
-  echo "Updating yarn core"
-  echo "=================="
+  echo "Performing yarn maintainance"
+  echo "============================"
+  echo ""
+
+  echo "Updating yarn core..."
   yarn global upgrade -s
   echo ""
 
-  echo "Cleaning yarn cache"
-  echo "==================="
+  echo "Cleaning yarn cache..."
   yarn cache clean
   echo ""
 

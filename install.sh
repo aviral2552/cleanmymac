@@ -33,5 +33,6 @@ chmod +x ~/.cleanmymac/cleanmymac.sh
 rm -rf ${CMM_PATH}
 
 echo ""
-echo "Clean My macOS has been installed and can be run by typing cleanmymac"
+echo "Clean My macOS has been installed and can be run by typing 'cleanmymac'."
+echo "For help, run 'cleanmymac help'."
 echo ""

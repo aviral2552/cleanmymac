@@ -4,9 +4,8 @@ CLEANERS=$(cat ~/.cleanmymac/path)/cleaners
 METAMODULE=$(cat ~/.cleanmymac/path)/cleaners/00_meta.sh
 
 if [ -z "$1" ]; then
-    echo "Initiating the cleaning engines..."
-    echo "=================================="
-    echo ""
+    echo "Starting up the cleaning engines"
+    echo "================================"
     for file in $(ls $CLEANERS); do
         $CLEANERS/$file
     done

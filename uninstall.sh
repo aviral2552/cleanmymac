@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 rm -rf $(which cleanmymac)
 rm -rf ~/.cleanmymac

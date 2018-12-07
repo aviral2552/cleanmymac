@@ -7,8 +7,10 @@ if hash apm 2>/dev/null; then
     echo "======================"
     apm upgrade --no-confirm
     echo ""
+    
+fi
 
-elif hash apm-beta 2>/dev/null; then
+if hash apm-beta 2>/dev/null; then
     echo "Updating Atom beta packages"
     echo "==========================="
     apm-beta upgrade --no-confirm
