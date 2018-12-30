@@ -3,7 +3,7 @@
 displayHelp() {
     clear
     echo "NAME"
-    echo "    cleanmymac -- a set simple command line cleaners for developers using macOS"
+    echo "    cleanmymac -- a set of simple command line cleaners for developers using macOS"
     echo ""
     echo "DESCRIPTION"
     echo "    Clean My macOS is built for modern macOS systems. It performs maintainance for mostly commonly used"
