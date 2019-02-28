@@ -20,7 +20,7 @@ sudo rm -f /private/var/db/BootCache.playlist >/dev/null 2>/dev/null
 echo "Updating dyld cache..."
 sudo update_dyld_shared_cache -root / -force >/dev/null 2>/dev/null
 
-echo "Rebuidling Kernel extension cache..."
+echo "Rebuilding Kernel extension cache..."
 sudo touch /System/Library/Extensions && sudo kextcache -u / >/dev/null 2>/dev/null
 
 echo "Running daily, weekly and monthly maintenance scripts..."

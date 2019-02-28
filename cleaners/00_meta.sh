@@ -37,7 +37,7 @@ runUpdate() {
 }
 
 invalidWarning() {
-    echo "You have passed an invalid arugment. Please run 'cleanmymac help' to list supported commands."
+    echo "You have passed an invalid argument. Please run 'cleanmymac help' to list supported commands."
     echo ""
 }
 
