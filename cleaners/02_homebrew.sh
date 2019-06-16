@@ -9,6 +9,7 @@ if hash brew 2>/dev/null; then
   echo "Checking for updates for homebrew..."
   brew update
   brew upgrade
+  brew cask upgrade
   brew cask outdated | cut -f 1 | xargs brew cask reinstall
   echo ""
 
