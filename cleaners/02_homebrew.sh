@@ -10,7 +10,7 @@ if hash brew 2>/dev/null; then
   brew update
   brew upgrade
   brew upgrade -- cask
-  brew outdated --cask | cut -f 1 | xargs brew reinstall --cask
+  brew outdated --cask | cut -f 1 | xargs brew cask reinstall
   echo ""
 
   echo "Calling the brewery doctor for the mandatory health checkup..."
