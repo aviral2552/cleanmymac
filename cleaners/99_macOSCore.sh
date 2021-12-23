@@ -21,7 +21,8 @@ echo "Updating dyld cache..."
 sudo update_dyld_shared_cache -root / -force >/dev/null 2>/dev/null
 
 echo "Rebuilding Kernel extension cache..."
-sudo touch /System/Library/Extensions && sudo kextcache -u / >/dev/null 2>/dev/null
+#sudo touch /System/Library/Extensions && sudo kextcache -u / >/dev/null 2>/dev/null
+sudo kextcache -u / >/dev/null 2>/dev/null # Minor tidbit solution with Big Sur
 
 echo "Running daily, weekly and monthly maintenance scripts..."
 sudo periodic daily weekly monthly >/dev/null 2>/dev/null
