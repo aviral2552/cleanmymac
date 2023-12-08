@@ -21,7 +21,7 @@ displayHelp() {
     echo "        Displays this help"
     echo ""
     echo "PROJECT LINK"
-    echo "    https://github.com/thelamehacker/cleanmymac"
+    echo "    https://github.com/aviral2552/cleanmymac"
     echo ""
     echo ""
 }
