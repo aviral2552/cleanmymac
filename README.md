@@ -20,7 +20,7 @@ After installing Homebrew, you can install `git` by typing the following in the 
 
 Open Terminal and type
 
-`$ git clone https://github.com/aviral2552/cleanmymac.git && cd cleanmymac && ./install.sh && cd`
+`$ git clone https://github.com/aviral2552/cleanmymac.git && cd cleanmymac && ./install.sh`
 
 Note: Clean My macOS is always installed in `~/.cleanmymac` directory
 
