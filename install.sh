@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Installer path
-CMM_PATH=`pwd`
+#Setting path variables
+CMM_PATH="$(pwd)"
 DEST_DIR="$HOME/.cleanmymac"
 
-# Pick a writable bin prefix automatically
+# Pick writable Homebrew prefix once
 if [[ "$(uname -m)" == "arm64" ]]; then
   BIN_PREFIX="${HOMEBREW_PREFIX:-/opt/homebrew}/bin"
 else
@@ -15,34 +15,28 @@ fi
 echo "Creating target directory..."
 mkdir -p "$DEST_DIR"
 
-echo "Copying program files (skips .git) ..."
-rsync -a --exclude='.git' "$PWD/" "$DEST_DIR/"
+echo "Copying program files (skips .git)…"
+rsync -a --exclude='.git' "$CMM_PATH/" "$DEST_DIR/"
 
-echo "Linking launcher into \$PATH..."
+echo "Linking launcher into \$PATH…"
 if [[ -w "$BIN_PREFIX" ]]; then
   ln -fs "$DEST_DIR/cleanmymac.sh" "$BIN_PREFIX/cleanmymac"
 else
-  sudo ln -fs "$DEST_DIR/cleanmymac.sh" "$BIN_PREFIX/cleanmymac"
+  sudo ln -fs "$DEST_DIR/cleanmymac.sh" "$BIN_PREFIX/cleanmymac"  # requires password on Intel Macs
 fi
 
-echo "Setting up configuration file..."
-echo "/Users/$USER/.cleanmymac" > ~/.cleanmymac/path
+echo "Setting up configuration file…"
+echo "$DEST_DIR" > "$DEST_DIR/path"
 
-echo "Finalizing permissions..."
-chmod -R u+w "$DEST_DIR"
-xattr -cr "$DEST_DIR/cleanmymac.sh"
+echo "Finalising permissions…"
 chmod +x "$DEST_DIR/cleanmymac.sh"
 
-echo "Moving installer & uninstaller to setup folder..."
-cd ~/.cleanmymac
-mkdir -p "setup"
-mv ~/.cleanmymac/install.sh ~/.cleanmymac/setup/install.sh
-mv ~/.cleanmymac/uninstall.sh ~/.cleanmymac/setup/uninstall.sh
+echo "Moving installer & uninstaller to the setup folder…"
+mkdir -p "$DEST_DIR/setup"
+mv "$CMM_PATH/install.sh" "$DEST_DIR/setup/install.sh" || true 
+mv "$CMM_PATH/uninstall.sh" "$DEST_DIR/setup/uninstall.sh" || true
 
 echo "Removing installer script..."
-rm -rf ${CMM_PATH}
+trap 'rm -rf "$CMM_PATH"' EXIT  # deferred; avoids race
 
-echo ""
-echo "Clean My macOS has been installed and can be run by typing 'cleanmymac'."
-echo "For help, run 'cleanmymac help'."
-echo ""
+echo -e "\nClean My macOS has been installed and can be run by typing 'cleanmymac'.\nFor help, run 'cleanmymac help'.\n"
