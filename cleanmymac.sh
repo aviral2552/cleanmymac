@@ -1,4 +1,5 @@
-#!/bin/sh
+#!/usr/bin/env bash
+set -euo pipefail
 
 CLEANERS=$(cat ~/.cleanmymac/path)/cleaners
 METAMODULE=$(cat ~/.cleanmymac/path)/cleaners/00_meta.sh
