@@ -1,17 +1,18 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-CLEANERS=$(cat ~/.cleanmymac/path)/cleaners
-METAMODULE=$(cat ~/.cleanmymac/path)/cleaners/00_meta.sh
+ROOT_DIR="$(<"$HOME/.cleanmymac/path")"
+CLEANERS_DIR="$ROOT_DIR/cleaners"
+METAMODULE="$CLEANERS_DIR/00_meta.sh"
 
-if [ -z "$1" ]; then
-    echo "Starting up the cleaning engines"
-    echo "================================"
-    for file in $(ls $CLEANERS); do
-        $CLEANERS/$file
-    done
-    echo "All done! Your mac is now squeaky clean!"
-    echo ""
+if (( $# == 0 )); then
+  echo "Starting up the cleaning engines"
+  echo "================================"
+  for cleaner in "$CLEANERS_DIR"/*; do
+    "$cleaner"
+  done
+  echo "All done! Your Mac is now squeaky clean!"
+  echo
 else
-    $METAMODULE $@
+  "$METAMODULE" "$@"
 fi
