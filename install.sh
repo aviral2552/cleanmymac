@@ -37,6 +37,7 @@ mv "$CMM_PATH/install.sh" "$DEST_DIR/setup/install.sh" || true
 mv "$CMM_PATH/uninstall.sh" "$DEST_DIR/setup/uninstall.sh" || true
 
 echo "Removing installer script..."
+cd "$HOME"
 trap 'rm -rf "$CMM_PATH"' EXIT  # deferred; avoids race
 
 echo -e "\nClean My macOS has been installed and can be run by typing 'cleanmymac'.\nFor help, run 'cleanmymac help'.\n"
