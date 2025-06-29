@@ -1,4 +1,5 @@
-#!/bin/sh
+#!/usr/bin/env bash
+set -euo pipefail
 
 # Check if yarn is installed and perform updates
 if hash yarn 2>/dev/null; then
