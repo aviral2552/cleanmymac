@@ -1,4 +1,5 @@
-#!/bin/sh
+#!/usr/bin/env bash
+set -euo pipefail
 
 # Check if brew is installed and perform maintainance
 if hash brew 2>/dev/null; then
