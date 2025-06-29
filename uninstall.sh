@@ -22,4 +22,6 @@ else
   echo "$CMM_DIR not present – nothing to remove"
 fi
 
+cd "$HOME"
+
 echo "Clean My macOS has been uninstalled. :("
