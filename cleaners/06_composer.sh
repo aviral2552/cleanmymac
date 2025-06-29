@@ -1,4 +1,5 @@
-#!/bin/sh
+#!/usr/bin/env bash
+set -euo pipefail
 
 # Check if composer is installed and perform updates
 if hash composer 2>/dev/null; then
