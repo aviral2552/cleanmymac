@@ -1,4 +1,5 @@
-#!/bin/sh
+#!/usr/bin/env bash
+set -euo pipefail
 
 # Check if npm is installed and perform updates
 if hash npm 2>/dev/null; then
