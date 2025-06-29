@@ -1,43 +1,36 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-#Setting path variables
-CMM_PATH="$(pwd)"
+# Setting path variables
+CMM_SRC_DIR="$(pwd)"
 DEST_DIR="$HOME/.cleanmymac"
 
-# Pick writable Homebrew prefix once
-if [[ "$(uname -m)" == "arm64" ]]; then
-  BIN_PREFIX="${HOMEBREW_PREFIX:-/opt/homebrew}/bin"
+# Pick writable Homebrew prefix
+if [[ $(uname -m) == arm64 ]]; then
+  BIN_DIR="${HOMEBREW_PREFIX:-/opt/homebrew}/bin"
 else
-  BIN_PREFIX="/usr/local/bin"
+  BIN_DIR="/usr/local/bin"
 fi
 
-echo "Creating target directory..."
+echo "Copying files…"
 mkdir -p "$DEST_DIR"
+rsync -a --exclude='.git' "$CMM_SRC_DIR/" "$DEST_DIR/"
 
-echo "Copying program files (skips .git)…"
-rsync -a --exclude='.git' "$CMM_PATH/" "$DEST_DIR/"
-
-echo "Linking launcher into \$PATH…"
-if [[ -w "$BIN_PREFIX" ]]; then
-  ln -fs "$DEST_DIR/cleanmymac.sh" "$BIN_PREFIX/cleanmymac"
+echo "Linking binary…"
+if [[ -w $BIN_DIR ]]; then
+  ln -fs "$DEST_DIR/cleanmymac.sh" "$BIN_DIR/cleanmymac"
 else
-  sudo ln -fs "$DEST_DIR/cleanmymac.sh" "$BIN_PREFIX/cleanmymac"  # requires password on Intel Macs
+  # requires password on Intel Macs
+  sudo ln -fs "$DEST_DIR/cleanmymac.sh" "$BIN_DIR/cleanmymac"
 fi
 
-echo "Setting up configuration file…"
 echo "$DEST_DIR" > "$DEST_DIR/path"
-
-echo "Finalising permissions…"
-chmod +x "$DEST_DIR/cleanmymac.sh"
 
 echo "Moving installer & uninstaller to the setup folder…"
 mkdir -p "$DEST_DIR/setup"
-mv "$CMM_PATH/install.sh" "$DEST_DIR/setup/install.sh" || true 
-mv "$CMM_PATH/uninstall.sh" "$DEST_DIR/setup/uninstall.sh" || true
+mv install.sh uninstall.sh "$DEST_DIR/setup/" 2>/dev/null || true
 
 echo "Removing installer script..."
-trap 'rm -rf "$CMM_PATH"' EXIT  # deferred; avoids race
-cd "$HOME"
+trap '(cd "$HOME" && rm -rf -- "$CMM_SRC_DIR")' EXIT
 
 echo -e "\nClean My macOS has been installed and can be run by typing 'cleanmymac'.\nFor help, run 'cleanmymac help'.\n"
