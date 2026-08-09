@@ -27,6 +27,10 @@ export CMM_LIB
 . "$CMM_LIB"
 
 CMM_VERSION="$(cat "$CMM_ROOT/VERSION" 2>/dev/null || echo 0.0.0)"
+
+# 2026: the project was renamed and moved. This copy is the frozen final 2.x.
+warn "cleanmymac has moved to scrubmac — https://github.com/aviral2552/scrubmac"
+warn "migrate: git clone https://github.com/aviral2552/scrubmac && cd scrubmac && ./install.sh"
 TAB=$'\t'
 
 # ---------- refuse root (S1) ----------
@@ -232,20 +236,10 @@ cmd_update() {
         err "git not found"
         exit 2
       }
-      note "Updating via git (fast-forward only)…"
-      local before after
-      before="$(git -C "$CMM_ROOT" rev-parse HEAD)"
-      if ! git -C "$CMM_ROOT" pull --ff-only; then
-        err "update failed — local history has diverged from the remote (S3: non-fast-forward pulls are refused)"
-        exit 1
-      fi
-      after="$(git -C "$CMM_ROOT" rev-parse HEAD)"
-      if [ "$before" = "$after" ]; then
-        note "Already up to date."
-      else
-        note "Updated. Changes pulled:"
-        git -C "$CMM_ROOT" --no-pager diff --stat "$before" "$after"
-      fi
+      err "this repository is frozen: cleanmymac was renamed to scrubmac"
+      note "There will be no further updates here. Migrate with:"
+      note "  git clone https://github.com/aviral2552/scrubmac && cd scrubmac && ./install.sh"
+      exit 1
       ;;
     brew)
       note "This install is managed by Homebrew — updating via brew…"
@@ -268,7 +262,7 @@ cmd_update() {
       ;;
     *)
       err "cannot self-update: this copy has no .git directory and is not Homebrew-managed"
-      note "Reinstall from source:  git clone https://github.com/aviral2552/cleanmymac && cd cleanmymac && ./install.sh"
+      note "Migrate to the renamed project:  git clone https://github.com/aviral2552/scrubmac && cd scrubmac && ./install.sh"
       exit 1
       ;;
   esac
